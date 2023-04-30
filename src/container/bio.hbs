@@ -1,0 +1,124 @@
+<div>
+	<main>
+		<header>
+			<h1>Biography of {{name}}</h1>
+		</header>
+		<section>
+			<b>{{name}} was born on {{birthdate}} in {{birthplace}}</b>
+			<br>
+			<br>
+			<b>{{name}} died on {{deathdate}} and was buried in the {{deathplace}}</b>
+			<br>
+			<br>
+			<i>Nationality: {{nationality}}</i>
+			<br>
+			<br>
+			<i>Occupation: {{occupation}}</i>
+			<br>
+			<div>
+				<h3>He was known for:</h3>
+				<ul>
+					{{#each known_for}}
+					<li>{{this}}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</section>
+	</main>
+</div>
+
+<hr>
+
+<div>
+	<main>
+		<header>
+			<h2>Life path</h2>
+		</header>
+		<section>
+			<h3>Educations</h3>
+			{{#each education}}
+			<b>Degree: {{degree}}</b>
+			<br>
+			<br>
+			<i>Science: {{field}}</i>
+			<br>
+			<br>
+			<b>He entered the {{institution}} in {{year}}</b>
+			{{/each}}
+			<br>
+			<br>
+			<h3>Publications</h3>
+			{{#each notable_publications}}
+			<ul>
+				<li>
+					{{title}} - {{year}}
+					<br>
+					<p>Publisher: {{publisher}}</p>
+				</li>
+			</ul>
+			{{/each}}
+			<br>
+			<h3>His Partners</h3>
+			{{#each partners}}
+			<ul>
+				<li>
+					{{name}} - {{relationship}}
+					<br>
+					<br>
+					<b>He was married for {{years}} years</b>
+				</li>
+			</ul>
+			{{/each}}
+			<br>
+			<h3>Achievements</h3>
+			{{#each awards}}
+			<p>Award: {{title}}</p>
+			<b>He was awarded in {{year}}</b>
+			<br>
+			<br>
+			<em>Desc: {{description}}</em>
+			{{/each}}
+			<br>
+			<h3>Influences</h3>
+			{{#each influences}}
+			<ul>
+				<li>{{this}}</li>
+			</ul>
+			{{/each}}
+			<br>
+			<h3>Influenced by:</h3>
+			{{#each influenced}}
+			<ul>
+				<li>{{this}}</li>
+			</ul>
+			{{/each}}
+			<br>
+			<h3>Quotes</h3>
+			{{#each quotes}}
+			<ul>
+				<li>
+					<q>{{this}}</q>
+				</li>
+			</ul>
+			{{/each}}
+			<br>
+			<h3>Major Discoveries</h3>
+			{{#each major_discoveries}}
+			<em>{{title}} - Discovered in {{year}}</em>
+			<p>Desc: {{description}}</p>
+			{{/each}}
+			<br>
+			<h3>Contributions</h3>
+			{{#with contributions}}
+			<p>Type: {{title}}</p>
+			<b>Desc: {{description}}</b>
+			<br>
+			<br>
+			<b>Discovered in {{year}}</b>
+			<br>
+			<br>
+			<i>Field: {{field}}</i>
+			{{/with}}
+		</section>
+	</main>
+</div>
