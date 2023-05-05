@@ -1,0 +1,152 @@
+<div>
+	{{#with web}}
+	<main>
+		<header>
+			<h1>Web Languages</h1>
+		</header>
+		<h2>HyperText Markup Language</h2>
+		{{#each languages}}
+		{{#if elements}}
+		{{! Replace `elements` with other objects --}}
+		{{#with this}}
+		<section>
+			<div>
+				<h3>{{name}}</h3>
+				<strong>Version: </strong>{{version}}
+				<br>
+				<br>
+				<em>Desc: {{description}}</em>
+			</div>
+			<br>
+			<h3>Elements</h3>
+			{{#each elements}}
+			<div>
+				<ul>
+					<li>
+						<b>{{name}}</b>
+						-
+						<em>{{description}}</em>
+						<br>
+						<div>
+							<h4>Attributes</h4>
+							{{#each attributes}}
+							{{#if name includeZero='class'}} <br>
+							<b>{{name}}</b>
+							-
+							<em>{{description}}</em>
+							{{/if}}
+							{{/each}}
+						</div>
+					</li>
+				</ul>
+			</div>
+			{{/each}}
+		</section>
+		{{/with}}
+		{{/if}}
+		{{/each}}
+	</main>
+	{{/with}}
+</div>
+
+<hr>
+
+<div>
+	{{#with web}}
+	<main>
+		<h2>Cascading Style Sheet</h2>
+		{{#each languages}}
+		{{#if properties}}
+		{{! Replace `properties` with other objects --}}
+		{{#with this}}
+		<section>
+			<div>
+				<h3>{{name}}</h3>
+				<strong>Version: </strong>{{version}}
+				<br>
+				<br>
+				<em>Desc: {{description}}</em>
+			</div>
+			<br>
+			<h3>Properties</h3>
+			{{#each properties}}
+			<div>
+				<ul>
+					<li>
+						<b>{{name}}</b>
+						-
+						<em>{{description}}</em>
+						<br>
+						<div>
+							<h4>Values</h4>
+							{{#each values}}
+							{{#if value includeZero='blue'}} <br>
+							<b>{{value}}</b>
+							-
+							<em>{{description}}</em>
+							{{/if}}
+							{{/each}}
+						</div>
+					</li>
+				</ul>
+			</div>
+			{{/each}}
+		</section>
+		{{/with}}
+		{{/if}}
+		{{/each}}
+	</main>
+	{{/with}}
+</div>
+
+<hr>
+
+<div>
+	{{#with web}}
+	<main>
+		<h2>JavaScript</h2>
+		{{#each languages}}
+		{{#if functions}}
+		{{! Replace `functions` with other objects --}}
+		{{#with this}}
+		<section>
+			<div>
+				<h3>{{name}}</h3>
+				<strong>Version: </strong>{{version}}
+				<br>
+				<br>
+				<em>Desc: {{description}}</em>
+			</div>
+			<br>
+			<h3>Functions</h3>
+			{{#each functions}}
+			<div>
+				<ul>
+					<li>
+						<b>{{name}}</b>
+						-
+						<em>{{description}}</em>
+						<br>
+						<div>
+							<h4>Parameters</h4>
+							{{#each parameters}}
+							<b>Name: {{name}}</b>
+							<br>
+							<br>
+							<b>Type: </b>{{type}}
+							<br>
+							<br>
+							<b>Desc: </b><em>{{description}}</em>
+							{{/each}}
+						</div>
+					</li>
+				</ul>
+			</div>
+			{{/each}}
+		</section>
+		{{/with}}
+		{{/if}}
+		{{/each}}
+	</main>
+	{{/with}}
+</div>
