@@ -534,10 +534,10 @@ router.get('/program', function (req, res) {
             },
           },
           {
-            name2: 'Cultural Show',
-            type2: 'Music and Dance',
-            duration2: 2,
-            details2: {
+            name: 'Cultural Show',
+            type: 'Music and Dance',
+            duration: 2,
+            details: {
               venue: {
                 name: 'Moulin Rouge',
                 location: {
@@ -556,7 +556,7 @@ router.get('/program', function (req, res) {
                   type: 'Classical ballet company',
                 },
               ],
-              guide2: {
+              guide: {
                 name: 'Sophie',
                 language: 'English',
                 rating: 4.6,
