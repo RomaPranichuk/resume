@@ -33,19 +33,21 @@
 			{{#with excursion}}
 			<div>
 				{{#each program}}
-				<i>{{name}}</i>
+				{{#if details.museum}}
+				{{! Replace `museum` with other objects}}
+				<b>Name: </b>{{name}}
 				<br>
 				<br>
-				<i>{{type}}</i>
+				<b>Type: </b>{{type}}
 				<br>
 				<br>
-				<b>{{duration}}</b>
-				{{#with details}}
+				<b>Duration: </b>{{duration}} years
 				<br>
 				<br>
+				<h3>The Louvre museum</h3>
 				<div>
-					{{#with museum}}
-					<b>Name: {{name}}</b>
+					{{#with details.museum}}
+					<b>Name: </b>{{name}}
 					<br>
 					<br>
 					<div>
@@ -55,44 +57,74 @@
 					</div>
 					<br>
 					<div>
-						<h3>Exhibits</h3>
+						<h4>Exhibits</h4>
 						<ul>
 							{{#each exhibits}}
-							<li>
-								{{name}}
-								<br>
-								{{artist}}
-								{{#unless artist includeZero=null}} (невідомо) {{/unless}}
-								<br>
-								<b>Desc: {{description}}</b>
-								<br>
-								{{audio_guide}}
-								{{#if audio_guide includeZero=true}} <button>Нажміть сюди, щоб програти звук</button>
-								{{/if}}
-							</li>
+							{{#if name includeZero='Winged Victory of Samothrace'}} <br> {{/if}}
+							<li>{{name}}</li>
+							<b>Artist: </b> {{artist}}
+							{{#unless artist includeZero=null}} Невідомо {{/unless}}
+							<br>
+							<b>Desc: </b><em>{{description}}</em>
+							<br>
+							<b>Audio_guide: </b>
+							{{#if audio_guide includeZero=true}} <button>Нажміть сюда, щоб зіграти звук</button> {{/if}}
 							{{/each}}
 						</ul>
 					</div>
 					{{/with}}
-					<br>
-					<div>
-						{{#with guide}}
-						<i>Guide name: {{name}}</i>
-						<p>Language: {{language}}</p>
-						<p>Rating: {{rating}}</p>
-						{{/with}}
-					</div>
 				</div>
-				{{/with}}
-				<hr>
-				<h2>Program №3</h2>
-				<b>{{name2}} - {{type2}}</b>
 				<br>
-				<b>{{duration2}}</b>
-				{{#with details2}}
+				<h3>Guide</h3>
 				<div>
-					{{#with venue}}
-					<p>Name: {{name}}</p>
+					{{#with details.guide}}
+					<b>Name: </b>{{name}}
+					<br>
+					<br>
+					<b>Language he speaks: </b>{{language}}
+					<br>
+					<br>
+					<b>Rating: </b>{{rating}}/5 stars
+					{{/with}}
+				</div>
+				{{/if}}
+				{{/each}}
+			</div>
+			{{/with}}
+		</section>
+	</main>
+	{{/with}}
+</div>
+
+<hr>
+
+<div>
+	<header>
+		<h2>Program №3</h2>
+	</header>
+	{{#with program}}
+	<main>
+		<section>
+			{{#with excursion}}
+			<div>
+				{{#each program}}
+				{{#if details.venue}}
+				{{! Replace `venue` with other objects}}
+				<b>Name: </b>{{name}}
+				<br>
+				<br>
+				<b>Type: </b>{{type}}
+				<br>
+				<br>
+				<b>Duration: </b>{{duration}} hours
+				<br>
+				<br>
+				<h3>Venue</h3>
+				<div>
+					{{#with details.venue}}
+					<b>Name: </b>{{name}}
+					<br>
+					<br>
 					<div>
 						{{#with location}}
 						<address>Address: {{address}}, {{city}}, {{country}}</address>
@@ -101,21 +133,28 @@
 					{{/with}}
 				</div>
 				<br>
-				<h3>Performers</h3>
-				<ul>
-					{{#each performers}}
-					<li>{{name}}</li>
-					<i>Type: {{type}}</i>
-					{{/each}}
-				</ul>
 				<div>
-					{{#with guide2}}
-					<i>Guide Name: {{name}}</i>
-					<p>Language: {{language}}</p>
-					<p>Rating: {{rating}}</p>
+					<h4>Performers</h4>
+					<ul>
+						{{#each details.performers}}
+						<li>{{name}}</li>
+						<b>Type: </b><em>{{type}}</em>
+						{{/each}}
+					</ul>
+				</div>
+				<h3>Guide</h3>
+				<div>
+					{{#with details.guide}}
+					<b>Name: </b>{{name}}
+					<br>
+					<br>
+					<b>Language he speaks: </b>{{language}}
+					<br>
+					<br>
+					<b>Rating: </b>{{rating}}/5 stars
 					{{/with}}
 				</div>
-				{{/with}}
+				{{/if}}
 				{{/each}}
 			</div>
 			{{/with}}
