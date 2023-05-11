@@ -1,0 +1,131 @@
+<div>
+  <header>
+    <h1>{{name}}</h1>
+    <section>
+      <b>Desc: </b><em>{{description}}</em>
+      <br />
+      <b>Price: </b><em>${{price}}</em>
+      <br />
+      <b>Category: </b>{{category}}
+    </section>
+  </header>
+</div>
+
+<hr />
+
+<div>
+  <main>
+    <header>
+      <h2>Features</h2>
+    </header>
+    <section>
+      <h3><span
+          class='badge text-bg-primary'
+        >Processor</span>
+      </h3>
+      {{#with features.processor}}
+        <b>Brand: </b>{{brand}}
+        <br />
+        <b>Model: </b>{{model}}
+        <br />
+        <b>Processor speed: </b>{{speed}}
+        <br />
+        <b>Cores: </b>{{cores}}
+        <br />
+        <b>Cache: </b>{{cache}}
+      {{/with}}
+      <br />
+      <br />
+      <div>
+        <h3><span
+            class='badge text-bg-primary'
+          >Memory</span>
+        </h3>
+        {{#with features.memory}}
+          <b>Memory type: </b>{{type}}
+          <br />
+          <b>Memory size: </b>{{size}}
+          <br />
+          <b>Memory speed: </b>{{speed}}
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h3><span
+            class='badge text-bg-success'
+          >Storage</span>
+        </h3>
+        {{#with features.storage}}
+          <b>Storage type: </b>{{type}}
+          <br />
+          <b>Storage size: </b>{{size}}
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h3><span
+            class='badge text-bg-primary'
+          >Display</span>
+        </h3>
+        {{#with features.display}}
+          <b>Display size: </b>{{size}}
+          <br />
+          <b>Display resolution: </b>{{resolution}}
+          <br />
+          <b>Technology: </b>{{technology}}
+          <br />
+          <b>Color space: </b>{{color_space}}
+          <br />
+          <b>Brightness: </b><em>{{brightness}}</em>
+          <br />
+          <b>Refresh rate: </b><em>{{refresh_rate}}</em>
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h3><span
+            class='badge text-bg-danger'
+          >Graphics</span>
+        </h3>
+        {{#with features.graphics}}
+          <b>Brand: </b>{{brand}}
+          <br />
+          <b>Model: </b>{{model}}
+          <br />
+          <b>Memory: </b>{{memory}}
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h3>
+          <span class='badge text-bg-warning'>Ports</span>
+        </h3>
+        {{#with features}}
+          {{#each ports}}
+            <b>Port type: </b>{{type}}
+            <br />
+            <b>Count: </b>{{count}}
+            <br />
+            <br />
+            <ul>
+              <h4><span
+                  class='badge rounded-pill text-bg-primary'
+                >Features</span>
+              </h4>
+              {{#each features}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          {{/each}}
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h3><span
+            class='badge text-bg-primary'
+          >Battery</span>
+        </h3>
+      </div>
+    </section>
+  </main>
+</div>
