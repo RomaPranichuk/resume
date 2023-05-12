@@ -1,0 +1,307 @@
+<div>
+  <main>
+    <header>
+      <h1>Corolla Cross</h1>
+    </header>
+    <section>
+      <b>Maker: </b>{{make}}
+      <br />
+      <b>Model</b>
+      -
+      {{model}}
+      <br />
+      <b>Year production: </b>{{year}}
+      <br />
+      <b>Color: </b>{{color}}
+      <br />
+      <hr />
+      <header>
+        <h2>Machine components</h2>
+      </header>
+      <h2><span
+          class='badge rounded-pill text-bg-primary'
+        >Features</span>
+      </h2>
+      <br />
+      <div>
+        <h3><span
+            class='badge rounded-pill text-bg-secondary'
+          >Interior</span>
+        </h3>
+        <br />
+        {{#with features.interior.seats}}
+          <h4><span
+              class='badge rounded-pill text-bg-success'
+            >Seats</span>
+          </h4>
+          <br />
+          <b>Material: </b>{{material}}
+          <br />
+          <b>Color: </b>{{color}}
+          <br />
+          {{#if heated includeZero=true}}
+            <b>Heated:</b>
+            (в наявності)
+          {{/if}}
+          <br />
+          {{#if ventilated includeZero=true}}
+            <b>Ventilated: </b>
+            (в наявності)
+          {{/if}}
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h4><span
+            class='badge rounded-pill text-bg-success'
+          >Dashboard</span>
+        </h4>
+        {{#with features.interior.dashboard}}
+          <b>Material: </b>{{material}}
+          <br />
+          <b>Color: </b>{{color}}
+          <br />
+          <br />
+          <div>
+            <h5><span
+                class='badge rounded-pill text-bg-danger'
+              >Display</span>
+            </h5>
+            {{#with display}}
+              <b>Type: </b>{{type}}
+              <br />
+              <b>Size </b>
+              -
+              {{size}}cm
+              <br />
+              <b>Resolution: </b>{{resolution}}
+              <br />
+              {{#if touchscreen includeZero=true}}
+                <b>Touchscreen: </b>
+                (в наявності)
+              {{/if}}
+            {{/with}}
+          </div>
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h4><span
+            class='badge rounded-pill text-bg-success'
+          >Audio</span>
+        </h4>
+        {{#with features.interior.audio}}
+          <b>Audio System: </b>{{system}}
+          <br />
+          <b>Speakers: </b>{{speakers}}
+          <br />
+          {{#if subwoofer includeZero=true}}
+            <b>Subwoofer: </b>
+            (в наявності)
+          {{/if}}
+          <br />
+          {{#if bluetooth includeZero=true}}
+            <b>Bluetooth: </b>
+            (в наявності)
+          {{/if}}
+          <br />
+          {{#if USB includeZero=true}}
+            <b>USB: </b>
+            (в наявності)
+          {{/if}}
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h3><span
+            class='badge rounded-pill text-bg-secondary'
+          >Exterior</span>
+        </h3>
+        <br />
+        <h4><span
+            class='badge rounded-pill text-bg-success'
+          >Wheels</span>
+        </h4>
+        {{#with features.exterior.wheels}}
+          <b>Size: </b>{{size}}cm
+          <br />
+          <b>Type: </b>{{type}}
+          <br />
+          <b>Color: </b>{{color}}
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h4><span
+            class='badge rounded-pill text-bg-success'
+          >Headlights</span>
+        </h4>
+        {{#with features.exterior.headlights}}
+          <b>Type: </b>{{type}}
+          <br />
+          <b>Brightness: </b>{{brightness}}
+          <br />
+          {{#if automatic includeZero=true}}
+            <b>Automatic: </b>
+            (так)
+          {{/if}}
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h4><span
+            class='badge rounded-pill text-bg-success'
+          >Sunroof</span>
+        </h4>
+        {{#with features.exterior.sunroof}}
+          <b>Type: </b>{{type}}
+          <br />
+          <b>Size: </b>{{size}}
+          <br />
+          {{#if automatic includeZero=true}}
+            <b>Automatic: </b>
+            (так)
+          {{/if}}
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h3><span
+            class='badge rounded-pill text-bg-warning'
+          >Safety</span>
+        </h3>
+        <br />
+        <h4><span
+            class='badge rounded-pill text-bg-success'
+          >Airbags</span>
+        </h4>
+        {{#with features.safety.airbags}}
+          <b>Front rate </b>
+          -
+          {{front}}
+          <br />
+          <b>Side rate </b>
+          -
+          {{side}}
+          <br />
+          <b>Knee rate </b>
+          -
+          {{knee}}
+          <br />
+          <b>Rear rate </b>
+          -
+          {{rear}}
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h4><span
+            class='badge rounded-pill text-bg-success'
+          >Assistance</span>
+        </h4>
+        {{#with features.safety.assistance}}
+          {{#if blind_spot_monitoring includeZero=true}}
+            <b>Blind spot monitoring: </b>
+            (в наявності)
+          {{/if}}
+          <br />
+          {{#if rear_cross_traffic_alert includeZero=true}}
+            <b>Rear cross traffic alert: </b>
+            (в наявності)
+          {{/if}}
+          <br />
+          {{#if lane_departure_warning includeZero=true}}
+            <b>Lane departure warning: </b>
+            (в наявності)
+          {{/if}}
+          <br />
+          {{#if adaptive_cruise_control includeZero=true}}
+            <b>Adaptive cruise control: </b>
+            (в наявності)
+          {{/if}}
+          <br />
+          {{#if collision_warning includeZero=true}}
+            <b>Collision warning: </b>
+            (в наявності)
+          {{/if}}
+        {{/with}}
+      </div>
+      <br />
+      <hr />
+      <div>
+        <header>
+          <h2>Fuel</h2>
+        </header>
+        <h3><span
+            class='badge rounded-pill text-bg-primary'
+          >Engine</span>
+        </h3>
+        {{#with engine}}
+          <b>Engine Type: </b>{{type}}
+          <br />
+          <b>Displacement: </b>{{displacement}}
+          <br />
+          <b>Horsepower: </b>{{horsepower}}
+          <br />
+          <b>Torque: </b>{{torque}}
+          <br />
+          <br />
+          <div>
+            <h4>Transmission</h4>
+            {{#with transmission}}
+              <b>Transmission type: </b>{{type}}
+              <br />
+              <b>Gears: </b>{{gears}}
+            {{/with}}
+          </div>
+        {{/with}}
+      </div>
+      <br />
+      <div>
+        <h3><span
+            class='badge rounded-pill text-bg-primary'
+          >Fuel Economy</span>
+        </h3>
+        {{#with fuel_economy}}
+          <b>For city: </b>{{city}}km
+          <br />
+          <b>For highway: </b>{{highway}}km
+          <br />
+          <b>Combined: </b>{{combined}}km
+        {{/with}}
+      </div>
+      <br />
+      <hr />
+      <div>
+        <header>
+          <h2>Price</h2>
+        </header>
+        {{#with price}}
+          <b>Base: </b><em>${{base}}</em>
+          <br />
+          <b>Destination: </b><em>${{destination}}</em>
+          <br />
+          <br />
+          <div>
+            <h3><span
+                class='badge rounded-pill text-bg-success'
+              >Options</span>
+            </h3>
+            {{#with options}}
+              <b>Navigation: </b><em>${{navigation}}</em>
+              <br />
+              <b>Moonroof: </b><em>${{moonroof}}</em>
+              <br />
+              <b>Premium paint: </b><em
+              >${{premium_paint}}</em>
+            {{/with}}
+          </div>
+          <br />
+          <b>Total </b>
+          =
+          <em>${{total}}</em>
+        {{/with}}
+      </div>
+    </section>
+  </main>
+</div>
