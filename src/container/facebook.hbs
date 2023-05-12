@@ -1,0 +1,26 @@
+<div>
+  <header>
+    <h1>{{name}}</h1>
+  </header>
+</div>
+
+<hr />
+
+<div>
+  <main>
+    <header>
+      <h2>Users</h2>
+    </header>
+    <section>
+      {{#each users}}
+        <br />
+        <b>ID: </b>{{id}}
+        <br />
+        <b>Name: </b>{{name}}
+        <br />
+        <b>Age: </b>{{age}}
+        <br />
+      {{/each}}
+    </section>
+  </main>
+</div>
