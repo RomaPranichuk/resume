@@ -115,15 +115,17 @@
               <div class='card'>
                 <div class='card-body'>
                   <h5>{{sub_title}}</h5>
-                </div>
-                <br />
-                {{#with detail}}
-                  <div class='card'>
-                    <div class='card-body'>
-
+                  {{#with detail}}
+                    <div class='card'>
+                      <div class='card-body'>
+                        <p>{{text}}</p>
+                        <button
+                          class='btn btn-success'
+                        >{{button}}</button>
+                      </div>
                     </div>
-                  </div>
-                {{/with}}
+                  {{/with}}
+                </div>
               </div>
             {{/with}}
           </div>
