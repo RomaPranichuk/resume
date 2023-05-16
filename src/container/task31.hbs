@@ -1,0 +1,21 @@
+<header>
+  <div class='row gx-5 gy-5'>
+    <section class='col-12'>
+      {{#with navigation}}
+        {{#each links}}
+          <a
+            href='{{href}}'
+            class='btn btn-link'
+          >{{text}}</a>
+        {{/each}}
+        {{#with button}}
+          <a
+            href='{{href}}'
+            class='btn btn-primary'
+          >{{text}}</a>
+        {{/with}}
+      {{/with}}
+      <hr />
+    </section>
+  </div>
+</header>
