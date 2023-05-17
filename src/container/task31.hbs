@@ -181,29 +181,25 @@
 </main>
 
 <footer>
-  <div class='row gy-3'>
-    {{#with footer}}
-      <h5>{{title}}</h5>
-      <section class='row'>
-        <div class='col-1'>
-          {{#each navigation}}
-            <a
-              href='{{href}}'
-              class='btn btn-link'
-            >{{text}}</a>
-          {{/each}}
-        </div>
-        <section class='row gx-5'>
-          <div class='col-1'>
-            {{#each socialMedia}}
-              <a
-                href='{{href}}'
-                class='btn btn-outline-dark'
-              >{{name}}</a>
-            {{/each}}
+  {{#with footer}}
+    <h5>{{title}}</h5>
+    {{#each navigation}}
+      <div>
+        <div class='row gy-3'>
+          <div class='col-6 col-sm-3'>
+            <a href='{{href}}'>{{text}}</a>
           </div>
-        </section>
-      </section>
-    {{/with}}
-  </div>
+        </div>
+      </div>
+    {{/each}}
+    <div class='w-100 d-none d-md-block'></div>
+    {{#each socialMedia}}
+      <div class='col-1 col-sm-3'>
+        <a
+          href='{{href}}'
+          class='btn btn-outline-dark'
+        >{{name}}</a>
+      </div>
+    {{/each}}
+  {{/with}}
 </footer>
