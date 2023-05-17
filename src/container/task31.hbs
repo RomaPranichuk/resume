@@ -1,5 +1,5 @@
 <header>
-  <div class='row gx-5 gy-5'>
+  <div class='row gx-3 gy-3'>
     <section class='col-12'>
       {{#with navigation}}
         {{#each links}}
@@ -17,5 +17,43 @@
       {{/with}}
       <hr />
     </section>
+    <section class='col-12'>
+      {{#with header}}
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+        {{#with button}}
+          <a
+            href='{{link}}'
+            class='btn btn-primary'
+          >{{text}}</a>
+        {{/with}}
+      {{/with}}
+      <hr />
+    </section>
   </div>
 </header>
+
+<main>
+  <div class='row gy-5 gx-2'>
+    {{#with city}}
+      <h2>{{title}}</h2>
+      <section class='col-5'>
+        {{#each cards}}
+          <div class='card'>
+            {{#with picture}}
+              <img
+                class='card-img-top'
+                src='{{src}}'
+                alt='{{alt}}'
+              />
+            {{/with}}
+            <div class='card-body'>
+              <h5 class='card-title'>{{title}}</h5>
+              <p>{{description}}</p>
+            </div>
+          </div>
+        {{/each}}
+      </section>
+    {{/with}}
+  </div>
+</main>
