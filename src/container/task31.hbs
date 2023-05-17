@@ -1,22 +1,26 @@
 <header>
-  <div class='row gx-3 gy-3'>
-    <section class='col-12'>
-      {{#with navigation}}
-        {{#each links}}
-          <a
-            href='{{href}}'
-            class='btn btn-link'
-          >{{text}}</a>
-        {{/each}}
-        {{#with button}}
-          <a
-            href='{{href}}'
-            class='btn btn-primary'
-          >{{text}}</a>
-        {{/with}}
-      {{/with}}
-      <hr />
-    </section>
+  <div class='row gx-5'>
+    {{#with navigation}}
+      <div class='row'>
+        <section class='col-5'>
+          {{#each links}}
+            <a
+              href='{{href}}'
+              class='btn btn-link'
+            >{{text}}</a>
+          {{/each}}
+        </section>
+        <section class='col-2'>
+          {{#with button}}
+            <a
+              href='{{href}}'
+              class='btn btn-primary'
+            >{{text}}</a>
+          {{/with}}
+        </section>
+      </div>
+    {{/with}}
+    <hr />
     <section class='col-12'>
       {{#with header}}
         <h1>{{title}}</h1>
@@ -181,25 +185,41 @@
 </main>
 
 <footer>
-  {{#with footer}}
-    <h5>{{title}}</h5>
-    {{#each navigation}}
-      <div>
-        <div class='row gy-3'>
-          <div class='col-6 col-sm-3'>
-            <a href='{{href}}'>{{text}}</a>
-          </div>
-        </div>
+  <div>
+    {{#with footer}}
+      <h5>{{title}}</h5>
+      <div class='row gy-5 gx-5'>
+        <section class='col-2'>
+          {{#each navigation}}
+            <div class='mb'>
+              <a
+                href='{{href}}'
+                class='btn btn-link'
+              >{{text}}</a>
+            </div>
+          {{/each}}
+        </section>
+        <section class='col-3'>
+          {{#each socialMedia}}
+            <div class='p-1'>
+              <a
+                href='{{link}}'
+                class='btn btn-outline-dark'
+              >{{name}}</a>
+            </div>
+          {{/each}}
+        </section>
+        <section class='col-3'>
+          {{#each partners}}
+            <div class='p-1'>
+              <a
+                href='{{link}}'
+                class='btn btn-outline-info'
+              >{{name}}</a>
+            </div>
+          {{/each}}
+        </section>
       </div>
-    {{/each}}
-    <div class='w-100 d-none d-md-block'></div>
-    {{#each socialMedia}}
-      <div class='col-1 col-sm-3'>
-        <a
-          href='{{href}}'
-          class='btn btn-outline-dark'
-        >{{name}}</a>
-      </div>
-    {{/each}}
-  {{/with}}
+    {{/with}}
+  </div>
 </footer>
