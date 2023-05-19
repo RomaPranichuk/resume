@@ -1,0 +1,55 @@
+<main class='p-5'>
+    <div class='row'>
+        <section class='col-12 mb-5'>
+            {{#with navigation}}
+                <div class='card'>
+                    <div class='nav'>
+                        {{#each links}}
+                            <div class='nav-item'>
+                                <a href='{{href}}' class='nav-link'>{{text}}</a>
+                            </div>
+                        {{/each}}
+                        <div class='nav-item'>
+                            <a href='#' class='nav-link disabled'>Disabled</a>
+                        </div>
+                    </div>
+                </div>
+            {{/with}}
+        </section>
+        {{#with newsBlock}}
+            <h3 class='text-center'>{{title}}</h3>
+            <div class='row'>
+                {{#each cards}}
+                    <section class='col-3'>
+                        <div class='card text-bg-dark mb-3 my-2'>
+                            <div class='card-header'>
+                                <div>
+                                    {{title}}
+                                    {{#if isTop includeZero=true}} <span class='badge rounded-pill text-bg-danger'>Top</span> {{/if}}
+                                    {{#if isNew includeZero=true}} <span class='badge rounded-pill text-bg-success'>New</span> {{/if}}
+                                </div>
+                            </div>
+                            <div class='card-body'>
+                                <p>{{description}}</p>
+                            </div>
+                        </div>
+                    </section>
+                {{/each}}
+                <hr class='mt-5 mb-5' />
+            </div>
+        {{/with}}
+        {{#with goodsBlock}}
+            <div class='row p-0 mt-4'>
+                <section class='col-12'>
+                    {{#each tabs}}
+                        <div class='nav nav-tabs'>
+                            <div class='nav-item'>
+                                <a href='#' class='nav-link'>{{text}}</a>
+                            </div>
+                        </div>
+                    {{/each}}
+                </section>
+            </div>
+        {{/with}}
+    </div>
+</main>
