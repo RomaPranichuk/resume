@@ -14,61 +14,75 @@
         <div class="mt-5 mb-5">
             <h2>{{header}}</h2>
         </div>
-        {{#with contacts_data}}
-            <h4>{{title}}</h4>
-            <section class="row pt-2">
-                {{#each buttons}}
-                    <div class="col-3">
-                        <button class="
-                        {{#if isPrimary includeZero=true}} btn btn-warning {{/if}}
-                        {{#if isOutline includeZero=true}} btn btn-outline-warning {{/if}}">{{text}}</button>
+        <div class="row">
+            <div>
+                {{#with contacts_data}}
+                    <h4>{{title}}</h4>
+                    <section class="row pt-2">
+                        {{#each buttons}}
+                            <div class="col-3">
+                                <button class="
+                                {{#if isPrimary includeZero=true}} btn btn-warning {{/if}}
+                                {{#if isOutline includeZero=true}} btn btn-outline-warning {{/if}}">{{text}}</button>
+                            </div>
+                        {{/each}}
+                    </section>
+                    <div class="row">
+                        {{#with form.input.surname}}
+                            <section class="col-4 m-0 pt-2">
+                                <label class="form-label">{{label}}</label>
+                                <input placeholder="{{placeholder}}" class='form-control' />
+                                <div class="form-text">{{caption}}</div>
+                            </section>
+                        {{/with}}
+                        {{#with form.input.name}}
+                            <section class="col-4 m-0 pt-2">
+                                <label class="form-label">{{label}}</label>
+                                <input placeholder="{{placeholder}}" class='form-control' />
+                                <div class="form-text">{{caption}}</div>
+                            </section>
+                        {{/with}}
+                        <div class="row">
+                            {{#with form.input.phone}}
+                                <section class="col-4 pt-2">
+                                    <label class="form-label">{{label}}</label>
+                                    <input placeholder="{{placeholder}}" class='form-control' />
+                                    <div class="form-text">{{caption}}</div>
+                                </section>
+                            {{/with}}
+                            {{#with form.input.email}}
+                                <section class="col-4 ps-3 pe-0 pt-2">
+                                    <label class="form-label">{{label}}</label>
+                                    <input placeholder="{{placeholder}}" class='form-control' />
+                                    <div class="form-text">{{caption}}</div>
+                                </section>
+                            {{/with}}
+                        </div>
                     </div>
-                {{/each}}
-            </section>
-            <div class="row pt-3">
-                {{#with form.input.surname}}
-                    <section class="col-4">
-                        <label class="form-label">{{label}}</label>
-                        <input placeholder="{{placeholder}}" class='form-control' />
-                        <div class="form-text">{{caption}}</div>
-                    </section>
-                {{/with}}
-                {{#with form.input.name}}
-                    <section class="col-4">
-                        <label class="form-label">{{label}}</label>
-                        <input placeholder="{{placeholder}}" class='form-control' />
-                        <div class="form-text">{{caption}}</div>
-                    </section>
-                {{/with}}
-                {{#with form.input.phone}}
-                    <div class="pt-3 pe-5">
-                        <section class="col-4">
-                            <label class="form-label">{{label}}</label>
-                            <input placeholder="{{placeholder}}" class='form-control' />
-                            <div class="form-text">{{caption}}</div>
-                        </section>
-                    </div>
-                {{/with}}
-                {{#with form.input.email}}
-                    <section class="col-4">
-                        <label class="form-label">{{label}}</label>
-                        <input placeholder="{{placeholder}}" class='form-control' />
-                        <div class="form-text">{{caption}}</div>
-                    </section>
+                    <hr class="col-8 mt-4">
+                    {{#each form.switch}}
+                        <div class="form-check form-switch pt-3">
+                            <label class="form-check-label">{{text}}</label>
+                            <input {{#if isActive includeZero=true}} checked {{/if}} type="checkbox" class="form-check-input">
+                        </div>
+                    {{/each}}
+                    <hr class="col-8 mt-4">
                 {{/with}}
             </div>
-        {{/with}}
-        <div class="row">
-            <section class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        
-                    </div>
+            <div class="w-100 d-none d-md-block"></div>
+            <div class="container">
+                <div class="row justify-content-end">
+                    <section class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                {{#each action_block}}
+                            
+                                {{/each}}
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
+            </div>
         </div>
-        {{#each action_block}}
-
-        {{/each}}
     </div>
 </main>
