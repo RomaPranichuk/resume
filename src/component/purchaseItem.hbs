@@ -1,0 +1,29 @@
+<div class='ps-1'>
+    {{#each itemList}}
+        <section class='col-12 mb-4'>
+            <div class='row gx-0'>
+                <div class='col-3 mt-3'>
+                    <p class='mb-2'>{{number}}</p>
+                    <h5>{{status}}</h5>
+                </div>
+                <div class='col-2 mt-3'>
+                    {{#with amount}}
+                        <p class='mb-2'>{{title}}:</p>
+                        <h5>{{value}}</h5>
+                    {{/with}}
+                </div>
+                <div class='col-5'>
+                    {{#each images}}
+                        <img src='{{this}}' class='img-rounded' />
+                    {{/each}}
+                </div>
+                <div class='col-2 mt-4'>
+                    {{#with button}}
+                        <a href='{{link}}' class="mx-4 {{#if isPrimary includeZero=true}} btn btn-primary {{/if}}">{{text}}</a>
+                    {{/with}}
+                </div>
+            </div>
+            <hr class='mt-2 mb-4 ms-0' />
+        </section>
+    {{/each}}
+</div>
