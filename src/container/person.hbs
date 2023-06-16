@@ -1,174 +1,197 @@
-<div>
-	<header>
-		{{#with person}}
-			<div>
-				<h1>{{name}} - {{age}} Years</h1>
-			</div>
-			<div>
-				<b>{{gender}}</b>
-			</div>
-
-			<br />
-
-			<div>
-				{{#with address}}
-					<address>
-						{{street}},
-						{{city}},
-						{{state}},
-						{{zip}},
-						{{country}}
-					</address>
-				{{/with}}
-			</div>
-		{{/with}}
-	</header>
-</div>
-
-<hr />
-
-<div>
-	{{#with person}}
-		<main>
-			<section>
-				{{> title data="Educations" big=true}}
-				<div>
-					<ul>
-						{{#each education}}
-							<li>Degree: {{degree}}</li>
-							<br>
-							<li>Major grade: {{major}}</li>
-							<br>
-							<li>University: {{university}}</li>
-							<br>
-							<li>Graduation was been in {{graduationYear}}</li>	
-						{{/each}} 
-					</ul>
+<main class="p-5">
+	<section class='col-12'>
+		<div class='card'>
+			<div class='card-body'>
+				<div class='row'>
+					<div class='col-6'>
+						<h6 class='mb-0 text-start'>Ім'я Прізвище</h6>
+					</div>
+					<div class='col-6'>
+						<h6 class='mb-0 text-end'>Resume Project</h6>
+					</div>
 				</div>
-			</section>
-
-			<br>
-			<hr>
-
-			<section>
-				{{> title data="Experiences" big=true}}
+			</div>
+		</div>
+	</section>
+	<div class="mt-5">
+		<header>
+			{{#with person}}
 				<div>
-					<ul>
-						{{#each workExperience}}
-							<li>
-								<h3>Companies</h3>
-								<em>Company: {{company}} - {{title}}</em>
-								<br>								
-								<b>Start working from {{startDate}} to {{endDate}}</b>	
-								<br>																
-								<b>Founded in {{year_founded}}</b>
-								<br>
-								<em>Industry: {{industry}}</em>
-								<br>						
-								<h3>
-									<li>Responsibilities</li>
-								</h3>
-								{{#each responsibilities}}
-									<ul>								
-										<li>{{this}}</li>
-									</ul>	
-								{{/each}}				
-								
-								<div>
-									{{#each employees}}
-										<li>{{> title data="Employers"}}</li>
-										<em>{{name}} - {{position}} master</em>
-										<br>
-										<b>Department: {{department}}</b>
-										<br>
-										
-										<div>
-											{{#each projects}}
-												<li>{{> title data="Projects" big=false}}</li>
+					<h1>{{name}} - {{age}} Years</h1>
+				</div>
+				<div class="mb-2">
+					<b>{{gender}}</b>
+				</div>
 
-												<em>{{name}}</em>
-												<br>
-												<em>Desc: {{description}}</em>
-												<br>
-												<strong>Status: {{status}}</strong>
-												<br>
-												<br>
-												<hr>
-												
-												<section>
-													<div>
-														{{> title data="Teams" big=true}}
-														{{#each teams}}
-															<em>Name: {{team_name}}</em>
-													
-															<h3>Team Leader</h3>
-															
-															{{#with team_leader}}
-																<em>{{name}} - {{title}}</em>
-																<br>
-																<strong>Email: <a>{{email}}</a></strong>
-															{{/with}}
-															<br>
-															<br>
+				<div>
+					{{#with address}}
+						<address>
+							{{street}},
+							{{city}},
+							{{state}},
+							{{zip}},
+							{{country}}
+						</address>
+					{{/with}}
+				</div>
+			{{/with}}
+		</header>
+	</div>
 
-															<div>
-																{{#each team_members}}
-																	<h3>Team Members</h3>
-																	<em>{{name}} - {{title}}</em>
-																	<br>
-																	<strong>Email: <a>{{email}}</a></strong>
-																	<br>
-																	<div>
-																		<h3>Skills:</h3>
-																		{{#each skills}}
-																			<ul>
-																				<li>{{this}}</li>
-																			</ul>
-																		{{/each}}
-																	</div>
-																	<br>
-																	<div>
-																		<h3>Her Project</h3>
+	<hr />
+
+	{{#with person}}
+		<section class="mb-5">
+			<div class="text-center">
+				{{> title data="Educations" big=true}}
+			</div>	
+			
+			<div>
+				<ol class="list-group list-group-numbered">
+					{{#each education}}
+						<li class="list-group-item">{{degree}}</li>
+						<li class="list-group-item">{{major}}</li>
+						<li class="list-group-item">{{university}}</li>
+						<li class="list-group-item">Graduation was been in {{graduationYear}}</li>	
+					{{/each}} 
+				</ol>
+			</div>
+		</section>
+
+		<hr>
+
+		<section>
+			<div class="text-center">
+				{{> title data="Experiences" big=true}}
+			</div>
+			<div class="row justify-content-center gx-3 gy-3">
+				{{#each workExperience}}
+					<section class="col-6">
+						<div class="card text-bg-primary">
+							<img src="https://picsum.photos/400/200" class="card-img-top" alt="Cinque Terre">
+							<div class="card-body">
+								<h3 class="text-center">Companies</h3>
+								<p class="text-center">Company: {{company}} - {{title}}</p>								
+								<p class="text-center">Start working from {{startDate}} to {{endDate}}</p>																	
+								<p class="text-center">Founded in {{year_founded}}</p>	
+								<p class="text-center mb-0">Industry: {{industry}}</p>
+							</div>
+						</div>
+					</section>
+					<section class="col-6">
+						<div class="card text-bg-success">
+							<img src="https://picsum.photos/400/200" class="card-img-top" alt="Cinque Terre">
+							<div class="card-body">
+								<h3 class="text-center">Responsibilities</h3>
+								{{#each responsibilities}}							
+									<p class="text-center">{{this}}</p>
+								{{/each}}
+							</div>
+						</div>	
+					</section>
+					{{#each employees}}
+						<section class="col-6">
+							<div class="card text-bg-warning text-center">
+								<img src="https://picsum.photos/400/200" class="card-img-top" alt="Cinque Terre">
+								<div class="card-body">
+									<div>{{> title data="Employers"}}</div>
+									<p class="mb-2">{{name}} - {{position}} master</p>
+									<b>Department: {{department}}</b>
+								</div>
+							</div>
+						</section>
+						{{#each projects}}
+							<section class="col-6">
+								<div class="card text-bg-secondary text-center">
+									<img src="https://picsum.photos/400/200" class="card-img-top" alt="Cinque Terre">
+									<div class="card-body">
+										<div>{{> title data="Projects" big=false}}</div>
+										<p>{{name}}</p>
+										<p>Desc: {{description}}</p>
+										<strong>Status: {{status}}</strong>
+									</div>
+								</div>
+							</section>
+			
+								<hr class="mt-5">
+							
+								<div class="text-center">
+									<h2 class="mb-0">Teams</h2>
+								</div>
+								{{#each teams}}
+									<section class="col-12">
+										<div class="card border-primary">
+											<div class="card-header text-primary"><h3 class="text-center mb-0">{{team_name}}</h3></div>
+											<div class="card-body text-primary">
+												<div class="row justify-content-center">
+													<section class="col-10">
+														<div class="card border-success">
+															<div class="card-body text-success">
+																<div class="row">
+																	<section class="col-5 m-0">
+																		<h5 class="text-start">Team Leader</h5>
+																		{{#with team_leader}}
+																			<p class="mb-2">{{name}} - {{title}}</p>
+																			<strong>Email: <a>{{email}}</a></strong>
+																		{{/with}}
+																	</section>
+																	{{#each team_members}}
+																		<section class="col-7">
+																			<h5 class='text-end'>Team Members</h5>
+																			<p class="mb-2 text-end">{{name}} - {{title}}</p>
+																			<p class="mb-0 text-end"><strong>Email: <a>{{email}}</a></strong></p>
+																		</section>
+																		<hr class="mt-4">
+																		<div>
+																			<h3 class="text-center">Skills</h3>
+																			<ol class="list-group list-group-numbered">
+																				{{#each skills}}
+																					<li class="list-group-item list-group-item-success">{{this}}</li>
+																				{{/each}}
+																			</ol>
+																		</div>
+																		<hr class="mt-4">
+																		<h3 class="text-center text-danger">Her Project</h3>
 																		{{#each projects}}
-																			<em>Name: {{name}}</em>
-																			<br>
-																			<b>Desc: {{description}}</b>
-																			<br>
-																			<div>
-																				<h4>Technologies used:</h4>
-																				{{#each technologies}}
-																					<ul>
-																						<li>{{this}}</li>
-																					</ul>
-																				{{/each}}
-																			</div>
-																			<br>
-																			<div>
-																				<h4>Project members</h4>
-																				{{#each team_members}}
-																					<em>
-																						<ul>
-																							<li>{{name}} - {{title}}</li>
-																						</ul>
-																					</em>
-																				{{/each}}
+																			<div class="row justify-content-center">
+																				<section class="col-10 pe-0">
+																					<div class="card border-danger">
+																						<h4 class="card-header text-danger text-center">{{name}}</h4>
+																						<div class="card-body text-danger">
+																							<p class="text-center">{{description}}</p>
+																							<hr class="mb-3 mt-3">
+																							<h5 class="text-center">Technologies used</h5>
+																							<ul class="list-group">
+																								{{#each technologies}}
+																									<li class="list-group-item list-group-item-danger">{{this}}</li>
+																								{{/each}}
+																							</ul>
+																							<hr class="mt-3 mb-3">
+																							<h5 class="text-center">Project members</h5>
+																							<ol class="list-group list-group-numbered">
+																								{{#each team_members}}
+																									<li class="list-group-item list-group-item-danger">{{name}} - {{title}}</li>
+																								{{/each}}
+																							</ol>
+																						</div>
+																					</div>
+																				</section>
 																			</div>	
 																		{{/each}}
-																	</div>
-																{{/each}}
-															</div> 
-														{{/each}}
-													</div>
-												</section>
-											{{/each}}
+																	{{/each}}
+																</div>
+															</div>
+														</div>
+													</section>
+												</div>
+											</div>
 										</div>
-									{{/each}}
-								</div>
-							</li>
+									</section> 
+								{{/each}}
 						{{/each}}
-					</ul>
-				</div>
-			</section>
-		</main>
+					{{/each}}
+				{{/each}}
+			</div>
+		</section>
 	{{/with}}
-</div>
+</main>

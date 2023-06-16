@@ -7,25 +7,23 @@
 	{{#with main}}
 		<main>
 			<section>
-				{{> title data="Work history" big=true}}
+				<div class="text-center">
+					{{> title data="Work history" big=true}}
+				</div>
 				<div>
-					<ul>
+					<ul class="list-group">
 						{{#each works}}
-							<li>
-								<div>{{position}}</div>
+							<li class="list-group-item">
+								<p>{{position}}</p>
 
-								<br>
-
-								<div>
+								<p>
 									{{duration.from}} - 
 									{{#if duration.to}} 
 										{{duration.to}} 
 									{{else}} 
 										(досі працюємо) 
 									{{/if}}
-								</div>
-
-								<br>
+								</p>
 
 								<div>
 									{{#if company.url}}
@@ -34,62 +32,42 @@
 										<b>{{company.name}}</b>
 									{{/if}}
 								</div>
-							
 
-								<br>
-								<br>
 
-								<div>
+								<h3 class="mt-5 text-center">
 									<strong>Projects ({{projectAmount}})</strong>
-								</div>
+								</h3>
 
-								<br>
-
-								<ul>
+								<ul class="list-group">
 									{{#each projects}}
-										<li>
+										<li class="list-group-item">
 											<div>{{> link text=name href=url blank=true noLine=true}}</div>
-
-											<br>
 
 											<div>{{about}}</div>
 
-											<br>
+											<h4 class="text-center mt-4">Project stacks ({{stackAmount}})</h4>
 
 											<div>
-												<em>Project stacks ({{stackAmount}})</em>
-											</div>
-
-											<br>
-
-											<div>
-												<ul>
+												<ol class="list-group list-group-numbered">
 													{{#each stacks}}
-														<li>{{name}}</li>	
+														<li class="list-group-item">{{name}}</li>	
 													{{/each}}
-												</ul>
+												</ol>
 											</div>
 
-											<br>
+											<h4 class="text-center mt-4">Project awards ({{awardAmount}})</h4>
 
 											<div>
-												<em>Project awards ({{awardAmount}})</em>
-											</div>
-
-											<br>
-
-											<div>
-												<ul>
+												<ol class="list-group list-group-numbered">
 													{{#each awards}} 
-														<li>{{name}}</li>
+														<li class="list-group-item">{{name}}</li>
 													{{/each}}
-												</ul>
+												</ol>
 											</div>
 										</li>
 									{{/each}}									
 								</ul>
 							</li>
-							<br>
 						{{/each}}
 					</ul>
 				</div>

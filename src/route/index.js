@@ -42,7 +42,9 @@ router.get('/', function (req, res) {
     // res.render генерує нам HTML сторінку
 
     //            ↙ cюди вводимо назву файлу з сontainer
-    res.render('index', {})
+    res.render('index', {
+        layout: 'index',
+    })
     //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -3108,7 +3110,7 @@ router.get('/shopcatalog', function (req, res) {
 
     //            ↙ cюди вводимо назву файлу з сontainer
     res.render('shopcatalog', {
-        // layout: 'shop',
+        layout: 'shop',
         navigation: {
             links: [
                 {
@@ -3456,6 +3458,42 @@ router.get('/bootstrap6', function (req, res) {
 
     //            ↙ cюди вводимо назву файлу з сontainer
     res.render('bootstrap6', {
+        layout: 'bootstrap',
+    })
+
+    //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bootstrap3', function (req, res) {
+    // res.render генерує нам HTML сторінку
+
+    //            ↙ cюди вводимо назву файлу з сontainer
+    res.render('bootstrap3', {
+        layout: 'bootstrap',
+    })
+
+    //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bootstrap4', function (req, res) {
+    // res.render генерує нам HTML сторінку
+
+    //            ↙ cюди вводимо назву файлу з сontainer
+    res.render('bootstrap4', {
         layout: 'bootstrap',
     })
 

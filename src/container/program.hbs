@@ -1,164 +1,182 @@
-<div>
-	<header>
-		<h1>Program lists</h1>
-	</header>
-	{{#with program}}
-	<main>
-		<h2>Program №1</h2>
-		<section>
-			{{#with excursion}}
-			<b>Excursion: {{name}}</b>
-			<br />
-			<br />
-			{{#with location}}
-			<address>{{country}}, {{city}}</address>
-			{{/with}}
-			<br />
-			<strong>It will take place on the {{date}}</strong>
-			{{/with}}
-		</section>
-	</main>
-	{{/with}}
-</div>
+<main class='p-5'>
+    <section class='col-12'>
+        <div class='card'>
+            <div class='card-body'>
+                <div class='row'>
+                    <div class='col-6'>
+                        <h6 class='mb-0 text-start'>Ім'я Прізвище</h6>
+                    </div>
+                    <div class='col-6'>
+                        <h6 class='mb-0 text-end'>Resume Project</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <h1 class='mt-5'>Program lists</h1>
+    {{#with program}}
+        <h2 class='mt-4 mb-4'>Program №1</h2>
+        <section class='col-7'>
+            <div class='card border-secondary'>
+                {{#with excursion}}
+                    <div class='card-header'><b>Excursion: {{name}}</b></div>
+                    <div class='card-body'>
+                        <strong>It will take place on the {{date}}</strong>
+                    </div>
+                    <div class='card-footer'>
+                        {{#with location}}
+                            <address class='mb-0'>{{country}}, {{city}}</address>
+                        {{/with}}
+                    </div>
+                {{/with}}
+            </div>
+        </section>
+    {{/with}}
 
-<hr>
+    <hr class='mt-5 mb-3' />
 
-<div>
-	<header>
-		<h2>Program №2</h2>
-	</header>
-	{{#with program}}
-	<main>
-		<section>
-			{{#with excursion}}
-			<div>
-				{{#each program}}
-				{{#if details.museum}}
-				{{! Replace `museum` with other objects}}
-				<b>Name: </b>{{name}}
-				<br>
-				<br>
-				<b>Type: </b>{{type}}
-				<br>
-				<br>
-				<b>Duration: </b>{{duration}} years
-				<br>
-				<br>
-				<h3>The Louvre museum</h3>
-				<div>
-					{{#with details.museum}}
-					<b>Name: </b>{{name}}
-					<br>
-					<br>
-					<div>
-						{{#with location}}
-						<address>Address: {{address}}, {{city}}, {{country}}</address>
-						{{/with}}
-					</div>
-					<br>
-					<div>
-						<h4>Exhibits</h4>
-						<ul>
-							{{#each exhibits}}
-							{{#if name includeZero='Winged Victory of Samothrace'}} <br> {{/if}}
-							<li>{{name}}</li>
-							<b>Artist: </b> {{artist}}
-							{{#unless artist includeZero=null}} Невідомо {{/unless}}
-							<br>
-							<b>Desc: </b><em>{{description}}</em>
-							<br>
-							<b>Audio_guide: </b>
-							{{#if audio_guide includeZero=true}} <button>Нажміть сюда, щоб зіграти звук</button> {{/if}}
-							{{/each}}
-						</ul>
-					</div>
-					{{/with}}
-				</div>
-				<br>
-				<h3>Guide</h3>
-				<div>
-					{{#with details.guide}}
-					<b>Name: </b>{{name}}
-					<br>
-					<br>
-					<b>Language he speaks: </b>{{language}}
-					<br>
-					<br>
-					<b>Rating: </b>{{rating}}/5 stars
-					{{/with}}
-				</div>
-				{{/if}}
-				{{/each}}
-			</div>
-			{{/with}}
-		</section>
-	</main>
-	{{/with}}
-</div>
+    <h2 class='mb-3'>Program №2</h2>
+    {{#with program}}
+        {{#with excursion}}
+            {{#each program}}
+                {{#if details.museum}}
+                    {{! Replace `museum` with other objects}}
+                    <p class='mb-2'><b>Name: </b>{{name}}</p>
 
-<hr>
+                    <p class='mb-2'><b>Type: </b>{{type}}</p>
 
-<div>
-	<header>
-		<h2>Program №3</h2>
-	</header>
-	{{#with program}}
-	<main>
-		<section>
-			{{#with excursion}}
-			<div>
-				{{#each program}}
-				{{#if details.venue}}
-				{{! Replace `venue` with other objects}}
-				<b>Name: </b>{{name}}
-				<br>
-				<br>
-				<b>Type: </b>{{type}}
-				<br>
-				<br>
-				<b>Duration: </b>{{duration}} hours
-				<br>
-				<br>
-				<h3>Venue</h3>
-				<div>
-					{{#with details.venue}}
-					<b>Name: </b>{{name}}
-					<br>
-					<br>
-					<div>
-						{{#with location}}
-						<address>Address: {{address}}, {{city}}, {{country}}</address>
-						{{/with}}
-					</div>
-					{{/with}}
-				</div>
-				<br>
-				<div>
-					<h4>Performers</h4>
-					<ul>
-						{{#each details.performers}}
-						<li>{{name}}</li>
-						<b>Type: </b><em>{{type}}</em>
-						{{/each}}
-					</ul>
-				</div>
-				<h3>Guide</h3>
-				<div>
-					{{#with details.guide}}
-					<b>Name: </b>{{name}}
-					<br>
-					<br>
-					<b>Language he speaks: </b>{{language}}
-					<br>
-					<br>
-					<b>Rating: </b>{{rating}}/5 stars
-					{{/with}}
-				</div>
-				{{/if}}
-				{{/each}}
-			</div>
-			{{/with}}
-		</section>
-	</main>
-	{{/with}}
-</div>
+                    <p class='mb-3'><b>Duration: </b>{{duration}}
+                        years
+                    </p>
+                    <div class='row gx-3'>
+                        <section class='col-8'>
+                            <div class='card border-secondary'>
+                                {{#with details.museum}}
+                                    <div class='card-header'>
+                                        <h3>The Louvre museum</h3>
+                                        <b>Name: </b>{{name}}
+                                    </div>
+                                    <div class='card-body'>
+                                        <h4 class='text-center mb-0'>Exhibits</h4>
+                                    </div>
+                                    <ol class='list-group list-group-flush list-group-numbered'>
+                                        {{#each exhibits}}
+                                            {{#if name includeZero='Winged Victory of Samothrace'}}{{/if}}
+                                            <li class='list-group-item'>{{name}}
+                                                <p class='mt-2 mb-2 ps-3'><b>Artist: </b>{{artist}}{{#unless artist includeZero=null}} Невідомо {{/unless}}</p>
+
+                                                <p class='mb-2 ps-3'><b>Desc: </b><em>{{description}}</em></p>
+
+                                                <p class='mb-0 ps-3'><b>Audio_guide: </b>{{#if audio_guide includeZero=true}}
+                                                        <a href='https://www.youtube.com/' class='btn btn-secondary'>Нажміть сюда, щоб зіграти звук</a>
+                                                    {{/if}}
+                                                </p>
+                                            </li>
+                                        {{/each}}
+                                    </ol>
+                                    <div class='card-footer'>
+                                        {{#with location}}
+                                            <address class='mb-0'>Address: {{address}}, {{city}}, {{country}}</address>
+                                        {{/with}}
+                                    </div>
+                                {{/with}}
+                            </div>
+                        </section>
+                        <section class='col-4'>
+                            <div class='card border-secondary'>
+                                <img src='https://picsum.photos/400/200' class='card-img-top' alt='Cinque Terre' />
+                                {{#with details.guide}}
+                                    <div class='pt-2 pb-0 px-3'>
+                                        <h3>Guide №1</h3>
+                                        <p class='mb-0'><b>Name: </b>{{name}}</p>
+                                    </div>
+                                    <hr class='mt-2 mb-0' />
+                                    <div class='pt-2 pb-0 px-3'>
+                                        <p class='mb-0'><b>Language: </b>{{language}}</p>
+                                    </div>
+                                    <hr class='mt-2 mb-0' />
+                                    <div class='pt-2 pb-2 px-3'>
+                                        <p class='mb-0'><b>Rating: </b>{{rating}}/5</p>
+                                    </div>
+                                    <div class='card-footer'>
+                                        <a href='https://www.youtube.com/' class='btn btn-primary'>Оцінити</a>
+                                        <a href='https://github.com/' class='btn btn-danger'>Відправити скаргу</a>
+                                    </div>
+                                {{/with}}
+                            </div>
+                        </section>
+                    </div>
+                {{/if}}
+            {{/each}}
+        {{/with}}
+    {{/with}}
+
+    <hr class='mt-5 mb-3' />
+
+    <h2 class='mb-3'>Program №3</h2>
+    {{#with program}}
+        {{#with excursion}}
+            {{#each program}}
+                {{#if details.venue}}
+                    {{! Replace `venue` with other objects}}
+                    <p class='mb-2'><b>Name: </b>{{name}}</p>
+
+                    <p class='mb-2'><b>Type: </b>{{type}}</p>
+
+                    <p class='mb-3'><b>Duration: </b>{{duration}}
+                        hours
+                    </p>
+
+                    <div class='row gx-3'>
+                        <section class='col-8'>
+                            <div class='card border-secondary'>
+                                {{#with details.venue}}
+                                    <div class='card-header'>
+                                        <h3>Venue</h3>
+                                        <b>Name: </b>{{name}}
+                                        {{#with location}}
+                                            <address class='mb-0'>Address: {{address}}, {{city}}, {{country}}</address>
+                                        {{/with}}
+                                    </div>
+                                {{/with}}
+                                <div class='card-body'>
+                                    <h4 class='mb-0 text-center'>Performers</h4>
+                                </div>
+                                <ul class='list-group list-group-flush'>
+                                    {{#each details.performers}}
+                                        <li class='list-group-item'>{{name}}
+                                            <p class='mt-2 mb-0'><b>Type: </b><em>{{type}}</em></p>
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </section>
+                        <section class='col-4'>
+                            <div class='card border-secondary'>
+                                <img src='https://picsum.photos/400/200' class='card-img-top' alt='Cinque Terre' />
+                                {{#with details.guide}}
+                                    <div class='pt-2 pb-0 px-3'>
+                                        <h3>Guide №2</h3>
+                                        <p class='mb-0'><b>Name: </b>{{name}}</p>
+                                    </div>
+                                    <hr class='mt-2 mb-0' />
+                                    <div class='pt-2 pb-0 px-3'>
+                                        <p class='mb-0'><b>Language: </b>{{language}}</p>
+                                    </div>
+                                    <hr class='mt-2 mb-0' />
+                                    <div class='pt-2 pb-2 px-3'>
+                                        <p class='mb-0'><b>Rating: </b>{{rating}}/5</p>
+                                    </div>
+                                    <div class='card-footer'>
+                                        <a href='https://www.youtube.com/' class='btn btn-primary'>Оцінити</a>
+                                        <a href='https://github.com/' class='btn btn-danger'>Відправити скаргу</a>
+                                    </div>
+                                {{/with}}
+                            </div>
+                        </section>
+                    </div>
+                {{/if}}
+            {{/each}}
+        {{/with}}
+    {{/with}}
+</main>

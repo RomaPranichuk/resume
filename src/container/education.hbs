@@ -1,11 +1,13 @@
 <div>
 	{{#with main}}
 		<main>
-			<section>
-				{{> title data="My Educationss" big=true}}
-				<ul class="ps-5">
+			<section class="mb-4">
+				<div class="text-center">
+					{{> title data="My Educations" big=true}}
+				</div>
+				<ul class="list-group">
 					{{#each education}}
-						<li>
+						<li class="list-group-item">
 							{{name}}
 							{{#unless isEnd}} (ще в процесі) {{/unless}}	
 						</li>
@@ -13,15 +15,17 @@
 				</ul>
 			</section>
 
-			<section>
-				{{> title data="My Certificates" big=false}}
-				<ul class="ps-5">
+			<section class="mb-5">
+				<div class="text-center">
+					{{> title data="My Certificates" big=false}}
+				</div>
+				<ol class="list-group list-group-numbered">
 					{{#each certificates}} 
-						<li>
+						<li class="list-group-item">
 							{{name}} ({{id}})
 						</li>
 					{{/each}}
-				</ul>
+				</ol>
 			</section>
 		</main>
 	{{/with}}
