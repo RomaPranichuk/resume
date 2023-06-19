@@ -1,152 +1,161 @@
-<div>
-	{{#with web}}
-	<main>
-		<header>
-			<h1>Web Languages</h1>
-		</header>
-		<h2>HyperText Markup Language</h2>
-		{{#each languages}}
-		{{#if elements}}
-		{{! Replace `elements` with other objects --}}
-		{{#with this}}
-		<section>
-			<div>
-				<h3>{{name}}</h3>
-				<strong>Version: </strong>{{version}}
-				<br>
-				<br>
-				<em>Desc: {{description}}</em>
-			</div>
-			<br>
-			<h3>Elements</h3>
-			{{#each elements}}
-			<div>
-				<ul>
-					<li>
-						<b>{{name}}</b>
-						-
-						<em>{{description}}</em>
-						<br>
-						<div>
-							<h4>Attributes</h4>
-							{{#each attributes}}
-							{{#if name includeZero='class'}} <br>
-							<b>{{name}}</b>
-							-
-							<em>{{description}}</em>
-							{{/if}}
-							{{/each}}
-						</div>
-					</li>
-				</ul>
-			</div>
-			{{/each}}
-		</section>
-		{{/with}}
-		{{/if}}
-		{{/each}}
-	</main>
-	{{/with}}
-</div>
+<main class='p-5'>
+    <section class='col-12'>
+        <div class='card'>
+            <div class='card-body'>
+                <div class='row'>
+                    <div class='col-6'>
+                        <h6 class='mb-0 text-start'>Ім'я Прізвище</h6>
+                    </div>
+                    <div class='col-6'>
+                        <h6 class='mb-0 text-end'>Resume Project</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class='row justify-content-center gy-3'>
+        {{#with web}}
+            <h1 class='text-center mt-5'>Web Languages</h1>
+            <section class='col-8'>
+                <div class='card border-success mb-5'>
+                    {{#each languages}}
+                        {{#if elements}}
+                            {{! Replace `elements` with other objects }}
+                            {{#with this}}
+                                <h2 class='card-header text-center'>HyperText Markup Language</h2>
+                                <div class='card-body'>
+                                    <h5 class='mb-2'>Version: {{version}}</h5>
 
-<hr>
+                                    <p class='mb-0'><em>{{description}}</em></p>
+                                </div>
+                                <hr class='m-0 text-success' />
+                                <div class='card-body'>
+                                    <h3 class='text-center mb-0'>Elements</h3>
+                                </div>
+                                {{#each elements}}
+                                    <ul class='list-group list-group-flush'>
+                                        <li class='list-group-item'>
+                                            <div class='mb-3'>
+                                                <b>{{name}}</b>
+                                                -
+                                                <em>{{description}}</em>
+                                            </div>
 
-<div>
-	{{#with web}}
-	<main>
-		<h2>Cascading Style Sheet</h2>
-		{{#each languages}}
-		{{#if properties}}
-		{{! Replace `properties` with other objects --}}
-		{{#with this}}
-		<section>
-			<div>
-				<h3>{{name}}</h3>
-				<strong>Version: </strong>{{version}}
-				<br>
-				<br>
-				<em>Desc: {{description}}</em>
-			</div>
-			<br>
-			<h3>Properties</h3>
-			{{#each properties}}
-			<div>
-				<ul>
-					<li>
-						<b>{{name}}</b>
-						-
-						<em>{{description}}</em>
-						<br>
-						<div>
-							<h4>Values</h4>
-							{{#each values}}
-							{{#if value includeZero='blue'}} <br>
-							<b>{{value}}</b>
-							-
-							<em>{{description}}</em>
-							{{/if}}
-							{{/each}}
-						</div>
-					</li>
-				</ul>
-			</div>
-			{{/each}}
-		</section>
-		{{/with}}
-		{{/if}}
-		{{/each}}
-	</main>
-	{{/with}}
-</div>
+                                            <h5>Attributes</h5>
+                                            {{#each attributes}}
+                                                {{#if name includeZero='class'}}
 
-<hr>
+                                                    <p class='mt-2 mb-0'><b>{{name}}</b>
+                                                        -
+                                                        <em>{{description}}</em>
+                                                    </p>
+                                                {{/if}}
+                                            {{/each}}
+                                        </li>
+                                    </ul>
+                                {{/each}}
+                                <h2 class='card-footer text-center mb-0'>{{name}}</h2>
+                            {{/with}}
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </section>
+        {{/with}}
+    </div>
 
-<div>
-	{{#with web}}
-	<main>
-		<h2>JavaScript</h2>
-		{{#each languages}}
-		{{#if functions}}
-		{{! Replace `functions` with other objects --}}
-		{{#with this}}
-		<section>
-			<div>
-				<h3>{{name}}</h3>
-				<strong>Version: </strong>{{version}}
-				<br>
-				<br>
-				<em>Desc: {{description}}</em>
-			</div>
-			<br>
-			<h3>Functions</h3>
-			{{#each functions}}
-			<div>
-				<ul>
-					<li>
-						<b>{{name}}</b>
-						-
-						<em>{{description}}</em>
-						<br>
-						<div>
-							<h4>Parameters</h4>
-							{{#each parameters}}
-							<b>Name: {{name}}</b>
-							<br>
-							<br>
-							<b>Type: </b>{{type}}
-							<br>
-							<br>
-							<b>Desc: </b><em>{{description}}</em>
-							{{/each}}
-						</div>
-					</li>
-				</ul>
-			</div>
-			{{/each}}
-		</section>
-		{{/with}}
-		{{/if}}
-		{{/each}}
-	</main>
-	{{/with}}
-</div>
+    <div class='row justify-content-around'>
+        {{#with web}}
+            <section class='col-5'>
+                <div class='card border-primary'>
+                    {{#each languages}}
+                        {{#if properties}}
+                            {{! Replace `properties` with other objects }}
+                            {{#with this}}
+                                <h2 class='text-center card-header'>Cascading Style Sheet</h2>
+                                <div class='card-body'>
+                                    <h5 class='mb-2'>Version: {{version}}</h5>
+
+                                    <p class='mb-0'><em>{{description}}</em></p>
+                                </div>
+                                <hr class='m-0 text-primary' />
+                                <div class='card-body'>
+                                    <h3 class='text-center mb-0'>Properties</h3>
+                                </div>
+                                {{#each properties}}
+                                    <ul class='list-group list-group-flush'>
+                                        <li class='list-group-item'>
+                                            <p>
+                                                <b>{{name}}</b>
+                                                -
+                                                <em>{{description}}</em>
+                                            </p>
+
+                                            <h5>Values</h5>
+                                            {{#each values}}
+                                                {{#if value includeZero='blue'}}
+
+                                                    <p class='mt-2 mb-0'><b>{{value}}</b>
+                                                        -
+                                                        <em>{{description}}</em>
+                                                    </p>
+                                                {{/if}}
+                                            {{/each}}
+                                        </li>
+                                    </ul>
+                                {{/each}}
+                                <div class='card-footer'>
+                                    <h2 class='mb-0 text-center'>{{name}}</h2>
+                                </div>
+                            {{/with}}
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </section>
+        {{/with}}
+
+        {{#with web}}
+            <section class='col-5'>
+                <div class='card border-warning'>
+                    {{#each languages}}
+                        {{#if functions}}
+                            {{! Replace `functions` with other objects }}
+                            {{#with this}}
+                                <h2 class='card-header text-center'>{{name}}</h2>
+                                <div class='card-body'>
+                                    <h5 class='mb-2'>Version: {{version}}</h5>
+
+                                    <p class='mb-0'><em>{{description}}</em></p>
+                                </div>
+                                <hr class='m-0 text-warning' />
+                                <div class='card-body'>
+                                    <h3 class='text-center mb-0'>Functions</h3>
+                                </div>
+                                {{#each functions}}
+                                    <ul class='list-group list-group-flush'>
+                                        <li class='list-group-item'>
+                                            <p>
+                                                <b>{{name}}</b>
+                                                -
+                                                <em>{{description}}</em>
+                                            </p>
+
+                                            <h5>Parameters</h5>
+                                            {{#each parameters}}
+                                                <p class='mb-2'><b>Name: {{name}}</b></p>
+
+                                                <p class='mb-2'><b>Type: </b>{{type}}</p>
+
+                                                <p class='mb-0'><b>Desc: </b><em>{{description}}</em></p>
+                                            {{/each}}
+                                        </li>
+                                    </ul>
+                                {{/each}}
+                                <h2 class='card-footer mb-0 text-center'>JS</h2>
+                            {{/with}}
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </section>
+        {{/with}}
+    </div>
+</main>

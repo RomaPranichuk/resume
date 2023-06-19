@@ -1,120 +1,146 @@
-<div>
-  <main>
-    <header>
-      <h1>{{name}}</h1>
-    </header>
-    <section>
-      <b>Desc: </b><em>{{description}}</em>
-      <br />
-      <br />
-      <div>
-        <h2><span
-            class='badge text-bg-primary'
-          >History</span></h2>
-        {{#with history}}
-          <strong>Javascript was founded in
-            {{year}}</strong>
-          <br />
-          <br />
-          <b>Founded by: </b>{{founder}}
-        {{/with}}
-      </div>
-      <br />
-      <br />
-      <div>
-        <h3><span
-            class='badge text-bg-info'
-          >Types</span></h3>
-        <ul>
-          {{#each types}}
-            <li>{{this}}</li>
-          {{/each}}
-        </ul>
-      </div>
-      <br />
-      <div>
-        <h3><span class='badge text-bg-danger'>Syntax</span>
-        </h3>
-        <br />
-        {{#with syntax}}
-          <b>Variables</b>
-          <ul>
-            {{#each variables}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-          <b>Functions</b>
-          <ul>
-            {{#each functions}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-          <b>Conditionals</b>
-          <ul>
-            {{#each conditionals}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-          <b>Loops</b>
-          <ul>
-            {{#each loops}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-          <b>Classes</b>
-          <ul>
-            {{#each classes}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-        {{/with}}
-      </div>
-      <br />
-      <div>
-        <h3><span
-            class='badge text-bg-warning'
-          >Features</span>
-        </h3>
-        <ul>
-          {{#each features}}
-            <li>{{this}}</li>
-          {{/each}}
-        </ul>
-      </div>
-      <br />
-      <div>
-        <h3><span
-            class='badge text-bg-success'
-          >Libraries</span>
-        </h3>
-        <ul>
-          {{#each libraries}}
-            <li>{{this}}</li>
-          {{/each}}
-        </ul>
-      </div>
-      <br />
-      <div>
-        <h3><span class='badge text-bg-primary'>Tools</span>
-        </h3>
-        <ul>
-          {{#each tools}}
-            <li>{{this}}</li>
-          {{/each}}
-        </ul>
-      </div>
-      <br />
-      <div>
-        <h3><span
-            class='badge text-bg-primary'
-          >Comunities</span>
-        </h3>
-        <ul>
-          {{#each community}}
-            <li>{{name}} - {{type}}</li>
-          {{/each}}
-        </ul>
-      </div>
+<main class='p-5'>
+    <section class='col-12'>
+        <div class='card'>
+            <div class='card-body'>
+                <div class='row'>
+                    <div class='col-6'>
+                        <h6 class='mb-0 text-start'>Ім'я Прізвище</h6>
+                    </div>
+                    <div class='col-6'>
+                        <h6 class='mb-0 text-end'>Resume Project</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
-</div>
+
+    <h1 class='mt-5'>{{name}}</h1>
+    <p><b>Desc: </b><em>{{description}}</em></p>
+
+    <section class='col-7'>
+        <div class='card border-primary'>
+            <div class='card-body'>
+                {{#with history}}
+                    <h2>History</h2>
+                    <p class='mb-2'><strong>Javascript was founded in{{year}}</strong></p>
+
+                    <p class='mb-0'><b>Founded by: </b>{{founder}}</p>
+                {{/with}}
+            </div>
+        </div>
+    </section>
+
+    <hr class='mt-5 mb-4' />
+
+    <h2 class='text-center mb-3'>Types</h2>
+    <ol class='list-group list-group-numbered'>
+        {{#each types}}
+            <li class='list-group-item list-group-item-info text-center'>{{this}}</li>
+        {{/each}}
+    </ol>
+
+    <hr class='mt-5 mb-4' />
+
+    {{#with syntax}}
+        <h2 class='text-center mb-3'>Syntax</h2>
+        <div class='row gx-4 gy-4'>
+            <section class='col-6'>
+                <div class='card border-danger'>
+                    <div class='card-body pb-0 text-center'>
+                        <h3>Variables</h3>
+                    </div>
+                    <ul class='list-group list-group-flush'>
+                        {{#each variables}}
+                            <li class='list-group-item list-group-item-danger text-center'>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </section>
+            <section class='col-6'>
+                <div class='card border-danger'>
+                    <div class='card-body pb-0 text-center'>
+                        <h3>Functions</h3>
+                    </div>
+                    <ul class='list-group list-group-flush'>
+                        {{#each functions}}
+                            <li class='list-group-item list-group-item-danger text-center'>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </section>
+            <section class='col-6'>
+                <div class='card border-danger'>
+                    <div class='card-body pb-0 text-center'>
+                        <h3>Conditionals</h3>
+                    </div>
+                    <ul class='list-group list-group-flush'>
+                        {{#each conditionals}}
+                            <li class='list-group-item list-group-item-danger text-center'>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </section>
+            <section class='col-6'>
+                <div class='card border-danger'>
+                    <div class='card-body pb-0 text-center'>
+                        <h3>Loops</h3>
+                    </div>
+                    <ul class='list-group list-group-flush'>
+                        {{#each loops}}
+                            <li class='list-group-item list-group-item-danger text-center'>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class='row justify-content-center'>
+            <section class='col-6'>
+                <div class='card border-danger mt-4'>
+                    <div class='card-body pb-0 text-center'>
+                        <h3>Classes</h3>
+                    </div>
+                    <ul class='list-group list-group-flush'>
+                        {{#each classes}}
+                            <li class='list-group-item list-group-item-danger text-center'>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </section>
+        </div>
+    {{/with}}
+
+    <hr class='mt-5 mb-4' />
+
+    <h2 class='text-center mb-3'>Features</h2>
+    <ol class='list-group list-group-numbered'>
+        {{#each features}}
+            <li class='list-group-item list-group-item-warning text-center'>{{this}}</li>
+        {{/each}}
+    </ol>
+
+    <hr class='mt-5 mb-4' />
+    <h2 class='mb-3 text-center'>Libraries</h2>
+    <ol class='list-group list-group-numbered'>
+        {{#each libraries}}
+            <li class='list-group-item list-group-item-success text-center'>{{this}}</li>
+        {{/each}}
+    </ol>
+
+    <hr class='mb-4 mt-5' />
+
+    <h2 class='mb-3 text-center'>Tools</h2>
+    <ol class='list-group list-group-numbered'>
+        {{#each tools}}
+            <li class='list-group-item list-group-item-secondary text-center'>{{this}}</li>
+        {{/each}}
+    </ol>
+
+    <hr class='mb-4 mt-5' />
+
+    <h2 class='mb-3 text-center'>Comunities</h2>
+    <ul class='list-group'>
+        {{#each community}}
+            <li class='list-group-item list-group-item-primary text-center'>{{name}} - {{type}}</li>
+        {{/each}}
+    </ul>
+</main>

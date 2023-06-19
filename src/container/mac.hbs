@@ -1,170 +1,200 @@
-<div>
-  <header>
-    <h1>{{name}}</h1>
-    <section>
-      <b>Desc: </b><em>{{description}}</em>
-      <br />
-      <b>Price: </b><em>${{price}}</em>
-      <br />
-      <b>Category: </b>{{category}}
+<main class='p-5'>
+    <section class='col-12'>
+        <div class='card'>
+            <div class='card-body'>
+                <div class='row'>
+                    <div class='col-6'>
+                        <h6 class='mb-0 text-start'>Ім'я Прізвище</h6>
+                    </div>
+                    <div class='col-6'>
+                        <h6 class='mb-0 text-end'>Resume Project</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </header>
-</div>
 
-<hr />
-
-<div>
-  <main>
-    <header>
-      <h2>Features</h2>
-    </header>
+    <h1 class='mt-5'>{{name}}</h1>
     <section>
-      <h3><span
-          class='badge text-bg-primary'
-        >Processor</span>
-      </h3>
-      {{#with features.processor}}
-        <b>Brand: </b>{{brand}}
-        <br />
-        <b>Model: </b>{{model}}
-        <br />
-        <b>Processor speed: </b>{{speed}}
-        <br />
-        <b>Cores: </b>{{cores}}
-        <br />
-        <b>Cache: </b>{{cache}}
-      {{/with}}
-      <br />
-      <br />
-      <div>
-        <h3><span
-            class='badge text-bg-primary'
-          >Memory</span>
-        </h3>
-        {{#with features.memory}}
-          <b>Memory type: </b>{{type}}
-          <br />
-          <b>Memory size: </b>{{size}}
-          <br />
-          <b>Memory speed: </b>{{speed}}
-        {{/with}}
-      </div>
-      <br />
-      <div>
-        <h3><span
-            class='badge text-bg-success'
-          >Storage</span>
-        </h3>
-        {{#with features.storage}}
-          <b>Storage type: </b>{{type}}
-          <br />
-          <b>Storage size: </b>{{size}}
-        {{/with}}
-      </div>
-      <br />
-      <div>
-        <h3><span
-            class='badge text-bg-primary'
-          >Display</span>
-        </h3>
-        {{#with features.display}}
-          <b>Display size: </b>{{size}}
-          <br />
-          <b>Display resolution: </b>{{resolution}}
-          <br />
-          <b>Technology: </b>{{technology}}
-          <br />
-          <b>Color space: </b>{{color_space}}
-          <br />
-          <b>Brightness: </b><em>{{brightness}}</em>
-          <br />
-          <b>Refresh rate: </b><em>{{refresh_rate}}</em>
-        {{/with}}
-      </div>
-      <br />
-      <div>
-        <h3><span
-            class='badge text-bg-danger'
-          >Graphics</span>
-        </h3>
-        {{#with features.graphics}}
-          <b>Brand: </b>{{brand}}
-          <br />
-          <b>Model: </b>{{model}}
-          <br />
-          <b>Memory: </b>{{memory}}
-        {{/with}}
-      </div>
-      <br />
-      <div>
-        <h3>
-          <span class='badge text-bg-warning'>Ports</span>
-        </h3>
-        {{#with features}}
-          {{#each ports}}
-            <b>Port type: </b>{{type}}
-            <br />
-            <b>Count: </b>{{count}}
-            <br />
-            <br />
-            <ul>
-              {{#if features}}<h4><span
-                    class='badge rounded-pill text-bg-primary'
-                  >Features</span>
-                </h4>{{/if}}
-              {{#each features}}
-                <li>{{this}}</li>
-              {{/each}}
-            </ul>
-          {{/each}}
-        {{/with}}
-      </div>
-      <hr />
-      <h2>Battery and other components</h2>
-      <br />
-      <div>
-        <h3><span
-            class='badge text-bg-primary'
-          >Battery</span>
-        </h3>
-        {{#with features}}
-          {{#with battery}}
-            <b>Battery type: </b>{{type}}
-            <br />
-            <b>Capacity: </b>{{capacity}}
-            <br />
-            <strong>Battery life is {{life}}</strong>
-          {{/with}}
-          <br />
-          <b>Battery Weight: </b>{{weight}}
-          <br />
-          <br />
-          <div>
-            <h4><span
-                class='badge rounded-pill text-bg-success'
-              >Dimensions</span>
-            </h4>
-            {{#with dimensions}}
-              <b>Height: </b><em>{{height}}</em>
-              <br />
-              <b>Width: </b><em>{{width}}</em>
-              <br />
-              <b>Depth: </b><em>{{depth}}</em>
-            {{/with}}
-          </div>
-          <hr />
-          <div>
-            <h2>{{operating_system}}</h2>
-            <ol>
-              {{#each accessories}}
+        <p class='mt-3 mb-2'><b>Desc: </b><em>{{description}}</em></p>
+
+        <p class='mb-2'><b>Price: </b><em>${{price}}</em></p>
+
+        <p class='mb-3'><b>Category: </b>{{category}}</p>
+        <a href='https://github.com/' class='btn btn-primary'>Купити</a>
+    </section>
+
+    <div class='nav nav-tabs mt-4 mb-4'>
+        <div class='nav-item'>
+            <a class='nav-link'>Продукт</a>
+        </div>
+        <div class='nav-item'>
+            <a class='nav-link active'>Характеристики</a>
+        </div>
+        <div class='nav-item'>
+            <a class='nav-link disabled'>Відгуки</a>
+        </div>
+    </div>
+
+    <h2 class='mb-4 text-center'>Features</h2>
+
+    <section class='row justify-content-center gy-4'>
+        <scetion class='col-5'>
+            <div class='card border-primary'>
+                <img src='https://picsum.photos/400/200' class='card-img-top' alt='Cinque Terre' />
+                <div class='card-body'>
+                    <h3><span class='badge text-bg-primary'>1. Processor</span></h3>
+                    {{#with features.processor}}
+                        <p class='mb-2 ps-3'><b>Brand: </b>{{brand}}</p>
+
+                        <p class='mb-2 ps-3'><b>Model: </b>{{model}}</p>
+
+                        <p class='mb-2 ps-3'><b>Processor speed: </b>{{speed}}</p>
+
+                        <p class='mb-2 ps-3'><b>Cores: </b>{{cores}}</p>
+
+                        <p class='mb-0 ps-3'><b>Cache: </b>{{cache}}</p>
+                    {{/with}}
+                </div>
+            </div>
+        </scetion>
+
+        <section class='col-5'>
+            <div class='card border-primary'>
+                <img src='https://picsum.photos/400/200' class='card-img-top' alt='Cinque Terre' />
+                <div class='card-body'>
+                    <h3><span class='badge text-bg-primary'>2. Memory</span></h3>
+                    {{#with features.memory}}
+                        <p class='mb-2 ps-3'><b>Memory type: </b>{{type}}</p>
+
+                        <p class='mb-2 ps-3'><b>Memory size: </b>{{size}}</p>
+
+                        <p class='mb-0 ps-3'><b>Memory speed: </b>{{speed}}</p>
+                    {{/with}}
+                </div>
+            </div>
+        </section>
+
+        <section class='col-5'>
+            <div class='card border-success'>
+                <img src='https://picsum.photos/400/200' class='card-img-top' alt='Cinque Terre' />
+                <div class='card-body'>
+                    <h3><span class='badge text-bg-success'>3. Storage</span></h3>
+                    {{#with features.storage}}
+                        <p class='mb-2 ps-3'><b>Storage type: </b>{{type}}</p>
+
+                        <p class='mb-0 ps-3'><b>Storage size: </b>{{size}}</p>
+                    {{/with}}
+                </div>
+            </div>
+        </section>
+
+        <section class='col-5'>
+            <div class='card border-primary'>
+                <img src='https://picsum.photos/400/200' class='card-img-top' alt='Cinque Terre' />
+                <div class='card-body'>
+                    <h3><span class='badge text-bg-primary'>4. Display</span></h3>
+                    {{#with features.display}}
+                        <p class='mb-2 ps-3'><b>Display size: </b>{{size}}</p>
+
+                        <p class='mb-2 ps-3'><b>Display resolution: </b>{{resolution}}</p>
+
+                        <p class='mb-2 ps-3'><b>Technology: </b>{{technology}}</p>
+
+                        <p class='mb-2 ps-3'><b>Color space: </b>{{color_space}}</p>
+
+                        <p class='mb-2 ps-3'><b>Brightness: </b><em>{{brightness}}</em></p>
+
+                        <p class='mb-0 ps-3'><b>Refresh rate: </b><em>{{refresh_rate}}</em></p>
+                    {{/with}}
+                </div>
+            </div>
+        </section>
+
+        <section class='col-5'>
+            <div class='card border-danger'>
+                <img src='https://picsum.photos/400/200' class='card-img-top' alt='Cinque Terre' />
+                <div class='card-body'>
+                    <h3><span class='badge text-bg-danger'>5. Graphics</span></h3>
+                    {{#with features.graphics}}
+                        <p class='mb-2 ps-3'><b>Brand: </b>{{brand}}</p>
+
+                        <p class='mb-2 ps-3'><b>Model: </b>{{model}}</p>
+
+                        <p class='mb-0 ps-3'><b>Memory: </b>{{memory}}</p>
+                    {{/with}}
+                </div>
+            </div>
+        </section>
+
+        <section class='col-5'>
+            <div class='card border-warning'>
+                <img src='https://picsum.photos/400/200' class='card-img-top' alt='Cinque Terre' />
+                {{#with features}}
+                    <div class='card-body pb-0'>
+                        <h3 class='mb-0'><span class='badge text-bg-warning'>6. Ports</span></h3>
+                    </div>
+                    {{#each ports}}
+                        <div class='card-body pt-0 pb-0'>
+                            <p class='mt-3 mb-2 ps-3'><b>Port type: </b>{{type}}</p>
+
+                            <p class='mb-2 ps-3'><b>Count: </b>{{count}}</p>
+                        </div>
+                        <hr class='m-0 text-warning' />
+                        {{#if features}}<h4 class='text-center mt-3'><span class='badge rounded-pill text-bg-primary'>Features</span></h4>{{/if}}
+                        <ul class='list-group list-group-flush'>
+                            {{#each features}}
+                                <li class='list-group-item list-group-item-primary'>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    {{/each}}
+                {{/with}}
+            </div>
+        </section>
+    </section>
+
+    <hr class='mb-5 mt-5' />
+    {{#with features}}
+        <div class='card text-bg-success'>
+            <div class='card-body'>
+                <h2 class='text-center'>Battery and other components</h2>
+                <div class='row gx-3'>
+                    <section class='col-6'>
+                        <h3>Battery</h3>
+                        {{#with battery}}
+                            <p><b>Battery type: </b>{{type}}</p>
+
+                            <p><b>Capacity: </b>{{capacity}}</p>
+
+                            <p><strong>Battery life is {{life}}</strong></p>
+                        {{/with}}
+
+                        <p class='mb-0'><b>Battery Weight: </b>{{weight}}</p>
+                    </section>
+
+                    <section class='col-6'>
+                        <h3 class='text-end'>Dimensions</h3>
+                        {{#with dimensions}}
+                            <p class='text-end'><b>Height: </b><em>{{height}}</em></p>
+
+                            <p class='text-end'><b>Width: </b><em>{{width}}</em></p>
+
+                            <p class='text-end'><b>Depth: </b><em>{{depth}}</em></p>
+                        {{/with}}
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <hr class='mt-5 mb-3' />
+
+        <h2>{{operating_system}}</h2>
+        <ol>
+            {{#each accessories}}
                 <li>{{name}}</li>
-                <b>Price: </b><em>${{price}}</em>
-              {{/each}}
-            </ol>
-          </div>
-        {{/with}}
-        <hr />
-      </div>
-    </section>
-  </main>
-</div>
+                <p><b>Price: </b><em>${{price}}</em></p>
+                <div class='mb-2'><a href='https://www.youtube.com/' class='btn btn-primary'>Купити</a></div>
+            {{/each}}
+        </ol>
+    {{/with}}
+</main>

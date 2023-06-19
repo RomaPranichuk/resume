@@ -1,140 +1,144 @@
-<div>
-  <main>
-    <h1>{{name}}</h1>
+<main class='p-5'>
+    <section class='col-12'>
+        <div class='card'>
+            <div class='card-body'>
+                <div class='row'>
+                    <div class='col-6'>
+                        <h6 class='mb-0 text-start'>У мене не було ідей щодо перероблення цієї сторінки</h6>
+                    </div>
+                    <div class='col-6'>
+                        <h6 class='mb-0 text-end'>Resume Project</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <h1 class='mt-5 mb-3'>{{name}}</h1>
     <section>
-      <ul>
-        {{#each users}}
-          <li><h2>{{name}}</h2></li>
-          {{age}}
-          years,
-          {{gender}}
-          (<em>ID: {{id}}</em>)<br /><br />
-          <b>Friends: </b>
-          <ul>
-            {{#each friends}}
-              <li>
-                <h4>{{name}}</h4>
+        <ul>
+            {{#each users}}
+                <li><h2>{{name}}</h2></li>
                 {{age}}
                 years,
                 {{gender}}
-                (<em>ID: {{id}}</em>)<br /><br />
-                <b>Mutual Friends: </b>
+                (<em>ID: {{id}}</em>)
+                <h3 class='mt-3'><b>Friends: </b></h3>
                 <ul>
-                  {{#each mutual_friends}}
-                    <li>
-                      <b>{{name}}</b>
-                      {{age}}
-                      years,
-                      {{gender}}
-                      (<em>ID: {{id}}</em>)<br /><br />
-
-                      {{#if mutual_friends}}
-                        Mutual Friends:
-                        <ul>
-                          {{#each mutual_friends}}
-                            <li>
-                              <b>{{name}}</b>
-                              {{age}}
-                              years,
-                              {{gender}}
-                              (<em>ID: {{id}}</em>)<br /><br
-                              />
-                            </li>
-                          {{/each}}
-                        </ul>
-                      {{/if}}
-                    </li>
-                  {{/each}}
-                </ul>
-              </li>
-              {{#if groups}}<h4><span
-                    class='badge rounded-pill text-bg-primary'
-                  >Groups</span>
-                </h4>{{/if}}
-              <ul>
-                {{#each groups}}
-                  <li><h5>{{name}}</h5></li>
-                  <em>{{description}}</em>
-                  (<em>ID: {{id}}</em>)<br /><br />
-                  <h5><span
-                      class='badge rounded-pill text-bg-warning'
-                    >Members</span>
-                  </h5>
-                  <ul>
-                    {{#each members}}
-                      <li>
-                        <b>{{name}}</b>
-                        {{age}}
-                        years,
-                        {{gender}}
-                        (<em>ID: {{id}}</em>)<br /><br />
-
-                        {{#if members}}
-                          Mutual Friends:
-                          <ul>
-                            {{#each members}}
-                              <li>
-                                <b>{{name}}</b>
-                                {{age}}
-                                years,
-                                {{gender}}
-                                (<em>ID: {{id}}</em>)<br
-                                /><br />
-                              </li>
-                            {{/each}}
-                          </ul>
-                        {{/if}}
-                      </li>
-                    {{/each}}
-                  </ul>
-                {{/each}}
-              </ul>
-            {{/each}}
-          </ul>
-          {{#if groups}}<h4><span
-                class='badge rounded-pill text-bg-primary'
-              >Groups</span>
-            </h4>{{/if}}
-          <ul>
-            {{#each groups}}
-              <li><h5>{{name}}</h5></li>
-              <em>{{description}}</em>
-              (<em>ID: {{id}}</em>)<br /><br />
-              <h5><span
-                  class='badge rounded-pill text-bg-warning'
-                >Members</span>
-              </h5>
-              <ul>
-                {{#each members}}
-                  <li>
-                    <b>{{name}}</b>
-                    {{age}}
-                    years,
-                    {{gender}}
-                    (<em>ID: {{id}}</em>)<br /><br />
-
-                    {{#if members}}
-                      Mutual Friends:
-                      <ul>
-                        {{#each members}}
-                          <li>
-                            <b>{{name}}</b>
+                    {{#each friends}}
+                        <li>
+                            <h4>{{name}}</h4>
                             {{age}}
                             years,
                             {{gender}}
-                            (<em>ID: {{id}}</em>)<br /><br
-                            />
-                          </li>
-                        {{/each}}
-                      </ul>
-                    {{/if}}
-                  </li>
-                {{/each}}
-              </ul>
+                            (<em>ID: {{id}}</em>)
+                            <h5 class='mt-3'><b>Mutual Friends: </b></h5>
+                            <ul>
+                                {{#each mutual_friends}}
+                                    <li>
+                                        <p><b>{{name}}</b>
+                                            {{age}}
+                                            years,
+                                            {{gender}}
+                                            (<em>ID: {{id}}</em>)
+                                        </p>
+
+                                        {{#if mutual_friends}}
+                                            Mutual Friends:
+                                            <ul>
+                                                {{#each mutual_friends}}
+                                                    <li>
+                                                        <b>{{name}}</b>
+                                                        {{age}}
+                                                        years,
+                                                        {{gender}}
+                                                        (<em>ID: {{id}}</em>)
+                                                    </li>
+                                                {{/each}}
+                                            </ul>
+                                        {{/if}}
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                        {{#if groups}}<h4><span class='badge rounded-pill text-bg-primary mt-4 mb-3'>Groups</span>
+                            </h4>{{/if}}
+                        <ul>
+                            {{#each groups}}
+                                <li><h5>{{name}}</h5></li>
+                                <em>{{description}}</em>
+                                (<em>ID: {{id}}</em>)
+                                <h5><span class='badge rounded-pill text-bg-warning mt-4 mb-2'>Members</span>
+                                </h5>
+                                <ul>
+                                    {{#each members}}
+                                        <li>
+                                            <p>
+                                                <b>{{name}}</b>
+                                                {{age}}
+                                                years,
+                                                {{gender}}
+                                                (<em>ID: {{id}}</em>)
+                                            </p>
+
+                                            {{#if members}}
+                                                Mutual Friends:
+                                                <ul>
+                                                    {{#each members}}
+                                                        <li>
+                                                            <b>{{name}}</b>
+                                                            {{age}}
+                                                            years,
+                                                            {{gender}}
+                                                            (<em>ID: {{id}}</em>)
+                                                        </li>
+                                                    {{/each}}
+                                                </ul>
+                                            {{/if}}
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            {{/each}}
+                        </ul>
+                    {{/each}}
+                </ul>
+                {{#if groups}}<h4><span class='badge rounded-pill text-bg-primary mt-4 mb-3'>Groups</span>
+                    </h4>{{/if}}
+                <ul>
+                    {{#each groups}}
+                        <li><h5>{{name}}</h5></li>
+                        <em>{{description}}</em>
+                        (<em>ID: {{id}}</em>)
+                        <h5><span class='badge rounded-pill text-bg-warning mb-2 mt-3'>Members</span>
+                        </h5>
+                        <ul>
+                            {{#each members}}
+                                <li>
+                                    <b>{{name}}</b>
+                                    {{age}}
+                                    years,
+                                    {{gender}}
+                                    (<em>ID: {{id}}</em>)
+
+                                    {{#if members}}
+                                        Mutual Friends:
+                                        <ul>
+                                            {{#each members}}
+                                                <li>
+                                                    <b>{{name}}</b>
+                                                    {{age}}
+                                                    years,
+                                                    {{gender}}
+                                                    (<em>ID: {{id}}</em>)
+                                                </li>
+                                            {{/each}}
+                                        </ul>
+                                    {{/if}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    {{/each}}
+                </ul>
             {{/each}}
-          </ul>
-        {{/each}}
-      </ul>
+        </ul>
     </section>
-  </main>
-</div>
+</main>
